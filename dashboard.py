@@ -61,7 +61,7 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     st.markdown("<h3 style='text-align: center; color: white;'>"'Preço da ação ao longo do tempo'"</h3>",unsafe_allow_html=True)
-    imagem = px.express.line(via, y="Close", height= 480)
+    imagem = px.express.line(via, y="Close")
     st.plotly_chart(imagem, use_container_width=True)
 
 with col2:
