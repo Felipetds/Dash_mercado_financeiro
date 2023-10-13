@@ -1,9 +1,9 @@
 import pandas as pd
-import pandas_datareader.data as web
+import pandas_datareader as pdr
 import yfinance as yf
 import datetime
 import streamlit as st
-import plotly.express as px
+import plotly as px
 
 st.set_page_config(layout="wide")
 
@@ -51,7 +51,7 @@ def verifica(nome_coluna, df):
 start = datetime.datetime(ano_ini, 1, 1)
 end = datetime.datetime(ano_fim, 12, 31)
 
-via = web.get_data_yahoo(empresa,start,end)
+via = pdr.data.get_data_yahoo(empresa,start,end)
 via.drop(columns=['Open','High','Low','Adj Close','Volume'],inplace=True)
 via.head()
 
@@ -61,7 +61,7 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     st.markdown("<h3 style='text-align: center; color: white;'>"'Preço da ação ao longo do tempo'"</h3>",unsafe_allow_html=True)
-    imagem = px.line(via, y="Close", height= 480)
+    imagem = px.express.line(via, y="Close", height= 480)
     st.plotly_chart(imagem, use_container_width=True)
 
 with col2:

@@ -1,0 +1,6 @@
+pandas
+pandas_datareader
+yfinance
+datetime
+streamlit
+plotly
