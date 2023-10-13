@@ -3,4 +3,4 @@ pandas_datareader
 yfinance
 datetime
 streamlit
-plotly
+plotly==5.17.0
