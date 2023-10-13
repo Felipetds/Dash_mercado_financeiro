@@ -3,7 +3,7 @@ import pandas_datareader as pdr
 import yfinance as yf
 import datetime
 import streamlit as st
-import plotly as px
+import plotly.express as px
 
 st.set_page_config(layout="wide")
 
@@ -61,7 +61,7 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     st.markdown("<h3 style='text-align: center; color: white;'>"'Preço da ação ao longo do tempo'"</h3>",unsafe_allow_html=True)
-    imagem = px.express.line(via, y="Close")
+    imagem = px.line(via, y="Close")
     st.plotly_chart(imagem, use_container_width=True)
 
 with col2:
